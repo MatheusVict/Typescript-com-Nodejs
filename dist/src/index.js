@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const routes_1 = __importDefault(require("./routes"));
+const routes_1 = __importDefault(require("../routes"));
 const app = (0, express_1.default)();
 const cors_1 = __importDefault(require("cors"));
 app.get('/', (req, res) => {

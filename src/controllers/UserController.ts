@@ -15,11 +15,15 @@ export default {
     async create(req: Request, res: Response) {
         const emailservice = new Email()
 
-        emailservice.sendMail(
-            { name: 'Matheus', email: 'matheus@gmail.com' },
-            {menssagem: 'olá'}
+        emailservice.sendMail({ // Se vc tranformou em objeto no serviço tem q usar aqui tbm passadno o tipo
+            to: { // Passando o tipo da interface para cada paramentro da função
+                name: 'Matheus', email: 'matheus@gmail.com' 
+            },
+            message: { 
+                menssagem: 'olá', anexos: ['Olá como está?']
+            }
             
-        )
+        })
         return res.send()
     }
 };

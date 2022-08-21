@@ -8,9 +8,17 @@ interface Imessage {
     anexos?: string[]
 }
 
+interface IMessageDTO {
+    to: IMailTo;
+    message: Imessage;
+}
 
-class Email {
-    sendMail(to: IMailTo, message:Imessage ) { // Uso das interfaces igual na outra aula
+interface IEmail {
+    sendMail(request: IMessageDTO) : void
+}
+
+class Email implements IEmail {
+    sendMail({ to, message }: IMessageDTO ) { // Uso das interfaces igual na outra aula
         console.log('enviado')
         console.log(`Para ${to.name}: ${message.menssagem}`)
         if(message.anexos) {

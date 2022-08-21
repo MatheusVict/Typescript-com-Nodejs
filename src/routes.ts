@@ -1,6 +1,6 @@
 import { Router } from "express";
 const routes = Router()
-import UserController from './src/controllers/UserController'
+import UserController from './controllers/UserController'
 
 
 
@@ -9,6 +9,6 @@ routes.get('/', (req, res) => {
 })
 
 routes.get('/user', UserController.index)
-routes.get('/user/create', UserController.create)
+routes.post('/user', UserController.create)
 
 export default routes;
